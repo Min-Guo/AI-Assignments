@@ -1,4 +1,5 @@
-import javax.print.Doc;
+package textclustering;
+import textclustering.*;
 import java.io.*;
 import java.util.*;
 
@@ -18,6 +19,7 @@ public class Clustering {
     public static ArrayList<String> stopWords = new ArrayList<>();
     public static ArrayList<Document> file = new ArrayList<>();
     public static Clustering cluster = new Clustering();
+
 
     public static void readStopWords(String stopwordsFile) {
         try {
@@ -84,7 +86,7 @@ public class Clustering {
 
     public static Document regExtrRule (ArrayList<String> spilt, Document document) {
         for (String tempString : spilt) {
-            tempString = tempString.toLowerCase();
+            /*tempString = tempString.toLowerCase();*/
             WordInfo tempwordInfo = cluster.new WordInfo();
             boolean duplicateWord = false;
             if ((tempString.length() >= 3) && (!stopWords.contains(tempString))) {
@@ -127,8 +129,9 @@ public class Clustering {
     public static void main (String[] args) throws IOException {
         String documentsFile = args[0];
         String stopwordsFile = args[1];
+        Stemmer stemmer = new Stemmer();
         readStopWords(stopwordsFile);
-        readDocuments(documentsFile);
+        readDocuments(stemmer.wordOutput(documentsFile));
         regExtract(documents);
     }
 }
