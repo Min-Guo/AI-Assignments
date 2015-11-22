@@ -1,21 +1,23 @@
 package textclustering;
-import textclustering.*;
 import java.io.*;
 import java.util.*;
 
-/**
- * Created by min on 11/15/15.
- */
 public class Clustering {
     public class WordInfo {
-        Integer time;
-        String word;
+        Integer number;
+        Integer freq;
+        double weight;
+        ArrayList<Integer> docIndex;
     }
     public class Document {
-        String name;
-        ArrayList<WordInfo> words;
+        String docName;
+        HashMap<String, WordInfo> words;
     }
-    public static ArrayList<ArrayList<String>> documents = new ArrayList<>();
+    public static HashMap<String, WordInfo> checkWords = new HashMap<>();
+    public static ArrayList<ArrayList<ArrayList<String>>> documents = new ArrayList<>();
+    public static ArrayList<String> originalWords = new ArrayList<>();
+    public static ArrayList<WordInfo> originalWordInfo = new ArrayList<>();
+    public static ArrayList<WordInfo> discardWords = new ArrayList<>();
     public static ArrayList<String> stopWords = new ArrayList<>();
     public static ArrayList<Document> file = new ArrayList<>();
     public static Clustering cluster = new Clustering();
@@ -51,15 +53,33 @@ public class Clustering {
 
     }
 
+    public static ArrayList<String> regularizeAndExtract (ArrayList<String> tempSplit) {
+        for (Iterator<String> iterator = tempSplit.iterator(); iterator.hasNext();) {
+            String word = iterator.next();
+            if (word.length() < 3) {
+                iterator.remove();
+            }
+            if (stopWords.contains(word)) {
+                iterator.remove();
+            }
+        }
+        for (int i = 0; i < tempSplit.size(); i++) {
+            tempSplit.set(i, tempSplit.get(i).toLowerCase());
+        }
+
+        return tempSplit;
+    }
+
     public static void readDocuments(String documentsFile){
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(documentsFile));
             String line;
             boolean preBlankLine = true;
-            ArrayList<String> tempDoc = new ArrayList<>();
+            ArrayList<ArrayList<String >> tempDoc = new ArrayList<>();
             while((line = bufferedReader.readLine()) != null) {
                 if (line.trim().length() != 0) {
-                    tempDoc.add(line);
+                    ArrayList<String> tempSpilt = new ArrayList<>(Arrays.asList(line.split("[\\p{Punct}\\s]+")));
+                    tempDoc.add(regularizeAndExtract(tempSpilt));
                     preBlankLine = false;
                 } else {
                     if (!preBlankLine) {
@@ -84,46 +104,23 @@ public class Clustering {
 
     }
 
-    public static Document regExtrRule (ArrayList<String> spilt, Document document) {
-        for (String tempString : spilt) {
-            /*tempString = tempString.toLowerCase();*/
-            WordInfo tempwordInfo = cluster.new WordInfo();
-            boolean duplicateWord = false;
-            if ((tempString.length() >= 3) && (!stopWords.contains(tempString))) {
-                if (document.words != null) {
-                    for (int i = 0; i < document.words.size(); i++) {
-                        if (document.words.get(i).word.equals(tempString)) {
-                            document.words.get(i).time ++;
-                            duplicateWord = true;
-                        }
+    public static void discardWords (ArrayList<ArrayList<ArrayList<String>>> documnets) {
+        for (int i = 0; i < documnets.size() ; i++) {
+            ArrayList<ArrayList<String>> tempDoc = documnets.get(i);
+            for (ArrayList<String> tempSentence : tempDoc) {
+                for (String tempWord : tempSentence) {
+                    if (checkWords.containsKey(tempWord) && !checkWords.get(tempWord).docIndex.contains(i)) {
+                        checkWords.get(tempWord).docIndex.add(i);
+                    } else {
+                        WordInfo tempInfo = cluster.new WordInfo();
+                        tempInfo.docIndex.add(i);
+                        checkWords.put(tempWord, tempInfo);
                     }
-                    if (!duplicateWord) {
-                        tempwordInfo.time = 1;
-                        tempwordInfo.word = tempString;
-                        document.words.add(tempwordInfo);
-                    }
-                } else {
-                    document.words = new ArrayList<>();
-                    tempwordInfo.time = 1;
-                    tempwordInfo.word = tempString;
-                    document.words.add(tempwordInfo);
                 }
             }
         }
-        return document;
     }
 
-    public static void regExtract (ArrayList<ArrayList<String>> documents){
-        for (ArrayList<String> temp : documents ) {
-            Document tempDoc = cluster.new Document();
-            tempDoc.name = temp.get(0);
-            for (int i = 1; i < temp.size(); i++) {
-                ArrayList<String> tempSpilt = new ArrayList<>(Arrays.asList(temp.get(i).split("[\\p{Punct}\\s]+")));
-                tempDoc = regExtrRule(tempSpilt, tempDoc);
-            }
-            file.add(tempDoc);
-        }
-    }
 
 
     public static void main (String[] args) throws IOException {
@@ -131,7 +128,7 @@ public class Clustering {
         String stopwordsFile = args[1];
         Stemmer stemmer = new Stemmer();
         readStopWords(stopwordsFile);
-        readDocuments(stemmer.wordOutput(documentsFile));
-        regExtract(documents);
+        readDocuments(documentsFile);
+        /*regExtract(documents);*/
     }
 }
