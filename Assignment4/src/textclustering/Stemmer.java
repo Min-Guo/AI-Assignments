@@ -372,7 +372,7 @@ class Stemmer
       try
       {
          FileInputStream in = new FileInputStream(originalFile);
-          PrintWriter writer = new PrintWriter ("input.txt", "UTF-8");
+          PrintWriter writer = new PrintWriter ("stemmerOut.txt", "UTF-8");
          try
          { while(true)
 
@@ -422,6 +422,6 @@ class Stemmer
       {
           System.out.println("original file not found");
       }
-       return "input.txt";
+       return "stemmerOut.txt";
    }
 }

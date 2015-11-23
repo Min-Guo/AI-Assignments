@@ -1,14 +1,10 @@
 package textclustering;
+import javax.swing.text.html.HTMLDocument;
 import java.io.*;
 import java.util.*;
 
 public class Clustering {
-    public class WordInfo {
-        Integer number;
-        Integer freq;
-        double weight;
-        ArrayList<Integer> docIndex;
-    }
+
     public class Document {
         String docName;
         HashMap<String, WordInfo> words;
@@ -17,7 +13,7 @@ public class Clustering {
     public static ArrayList<ArrayList<ArrayList<String>>> documents = new ArrayList<>();
     public static ArrayList<String> originalWords = new ArrayList<>();
     public static ArrayList<WordInfo> originalWordInfo = new ArrayList<>();
-    public static ArrayList<WordInfo> discardWords = new ArrayList<>();
+    public static ArrayList<String> discardWords = new ArrayList<>();
     public static ArrayList<String> stopWords = new ArrayList<>();
     public static ArrayList<Document> file = new ArrayList<>();
     public static Clustering cluster = new Clustering();
@@ -104,24 +100,58 @@ public class Clustering {
 
     }
 
-    public static void discardWords (ArrayList<ArrayList<ArrayList<String>>> documnets) {
+    public static void calcWordsFequency (ArrayList<ArrayList<ArrayList<String>>> documnets) {
         for (int i = 0; i < documnets.size() ; i++) {
             ArrayList<ArrayList<String>> tempDoc = documnets.get(i);
             for (ArrayList<String> tempSentence : tempDoc) {
                 for (String tempWord : tempSentence) {
-                    if (checkWords.containsKey(tempWord) && !checkWords.get(tempWord).docIndex.contains(i)) {
-                        checkWords.get(tempWord).docIndex.add(i);
-                    } else {
-                        WordInfo tempInfo = cluster.new WordInfo();
-                        tempInfo.docIndex.add(i);
+                        WordInfo tempInfo = new WordInfo();
+                        tempInfo.addIndex(i);
                         checkWords.put(tempWord, tempInfo);
+                }
+            }
+        }
+    }
+
+    public static void wordTodiscard (HashMap<String, WordInfo> checkWords) {
+      for (Map.Entry<String, WordInfo> entry : checkWords.entrySet()) {
+          WordInfo tempInfo = new WordInfo();
+          tempInfo = entry.getValue();
+          if (tempInfo.sizeIndex() > (documents.size() / 2)) {
+              discardWords.add(entry.getKey());
+          }
+      }
+    }
+
+    public static void discard (ArrayList<String> discardWords) {
+        for (String tempWord : discardWords) {
+            for (ArrayList<ArrayList<String>> tempdoc :documents) {
+                for (ArrayList<String> tempSentence : tempdoc) {
+                    for (Iterator<String> iterator = tempSentence.iterator(); iterator.hasNext();) {
+                        String word = iterator.next();
+                        if (word.equals(tempWord)) {
+                            iterator.remove();
+                        }
+
                     }
                 }
             }
         }
     }
 
-
+    public static void stemmerInput (ArrayList<ArrayList<ArrayList<String>>> documents) throws IOException {
+        FileWriter writer = new FileWriter ("stemmerIn.txt");
+        for (ArrayList<ArrayList<String>> tempDoc: documents) {
+            for (ArrayList<String> tempSentence : tempDoc) {
+                for (String tempWord : tempSentence) {
+                    writer.write(tempWord + " ");
+                }
+                writer.write("\n");
+            }
+            writer.write("\n\n\n");
+        }
+        writer.close();
+    }
 
     public static void main (String[] args) throws IOException {
         String documentsFile = args[0];
@@ -129,6 +159,11 @@ public class Clustering {
         Stemmer stemmer = new Stemmer();
         readStopWords(stopwordsFile);
         readDocuments(documentsFile);
+        calcWordsFequency(documents);
+        wordTodiscard(checkWords);
+        discard(discardWords);
+        stemmerInput(documents);
+        stemmer.wordOutput("stemmerIn.txt");
         /*regExtract(documents);*/
     }
 }
