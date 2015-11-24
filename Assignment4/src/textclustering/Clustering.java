@@ -196,7 +196,7 @@ public class Clustering {
 
     public static void calcWordWeight (ArrayList<Document> documentWords) {
         for (Document tempDoc : documentWords) {
-            tempDoc.calcWeight();
+            tempDoc.calcWeight(documentWords.size());
         }
     }
 

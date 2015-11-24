@@ -28,6 +28,10 @@ public class WordInfo {
         return freq;
     }
 
+    public void increaseFreq() {
+        freq++;
+    }
+
     public void setWeight (double wordWeight) {
         weight = wordWeight;
     }

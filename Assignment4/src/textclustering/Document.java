@@ -1,15 +1,11 @@
 package textclustering;
 
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.lang.Math;
 
 public class Document {
     private String docName;
-    private double wordNumber;
     private HashMap<String, WordInfo> words;
 
     public Document () {
@@ -36,7 +32,7 @@ public class Document {
         return words.get(tempWord);
     }
 
-    public double getWordNumber (HashMap<String, WordInfo> words) {
+    /*public double getWordNumber (HashMap<String, WordInfo> words) {
         Collection<WordInfo> c = words.values();
         Iterator itr = c.iterator();
         while (itr.hasNext()) {
@@ -44,14 +40,14 @@ public class Document {
             wordNumber = wordNumber + wordInfo.getFreq();
         }
         return wordNumber;
-    }
+    }*/
 
-    public void calcWeight () {
-        double wordsNum = getWordNumber(words);
+    public void calcWeight (double textNumber) {
+        /*double wordsNum = getWordNumber(words);*/
         for (Map.Entry<String, WordInfo> entry : words.entrySet()) {
             double tempWeight;
             WordInfo wordInfo = entry.getValue();
-            tempWeight = - Math.log(wordInfo.getFreq() / wordsNum)/ Math.log(2.0) ;
+            tempWeight = - Math.log(wordInfo.getFreq() / textNumber)/ Math.log(2.0) ;
             wordInfo.setWeight(tempWeight);
         }
     }
