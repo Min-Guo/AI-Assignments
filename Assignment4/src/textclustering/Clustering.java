@@ -1,16 +1,20 @@
 package textclustering;
+import com.sun.javadoc.Doc;
+
 import javax.swing.text.html.HTMLDocument;
 import java.io.*;
 import java.util.*;
 
 public class Clustering {
 
-    public class Document {
+    /*public class Document {
         String docName;
         HashMap<String, WordInfo> words;
-    }
+    }*/
     public static HashMap<String, WordInfo> checkWords = new HashMap<>();
+    public static ArrayList<ArrayList<ArrayList<String>>> stemmerDocuments = new ArrayList<>();
     public static ArrayList<ArrayList<ArrayList<String>>> documents = new ArrayList<>();
+    public static ArrayList<Document> documentWords = new ArrayList<>();
     public static ArrayList<String> originalWords = new ArrayList<>();
     public static ArrayList<WordInfo> originalWordInfo = new ArrayList<>();
     public static ArrayList<String> discardWords = new ArrayList<>();
@@ -66,9 +70,9 @@ public class Clustering {
         return tempSplit;
     }
 
-    public static void readDocuments(String documentsFile){
+    public static void readDocuments(String inputFile, ArrayList<ArrayList<ArrayList<String>>> outputArray){
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(documentsFile));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile));
             String line;
             boolean preBlankLine = true;
             ArrayList<ArrayList<String >> tempDoc = new ArrayList<>();
@@ -79,7 +83,7 @@ public class Clustering {
                     preBlankLine = false;
                 } else {
                     if (!preBlankLine) {
-                        documents.add(new ArrayList<>(tempDoc));
+                        outputArray.add(new ArrayList<>(tempDoc));
                         tempDoc.clear();
                     }
                     preBlankLine = true;
@@ -90,12 +94,12 @@ public class Clustering {
         catch(FileNotFoundException ex) {
             System.out.println(
                     "Unable to open file '" +
-                            documentsFile + "'");
+                            inputFile + "'");
         }
         catch(IOException ex) {
             System.out.println(
                     "Error reading file '"
-                            + documentsFile + "'");
+                            + inputFile + "'");
         }
 
     }
@@ -153,17 +157,49 @@ public class Clustering {
         writer.close();
     }
 
+    public static void calcStemedWordFreq (ArrayList<ArrayList<ArrayList<String>>> documents) {
+        for (ArrayList<ArrayList<String>> tempDoc : documents) {
+            Document doc = new Document();
+           /* for (int i = 0; i < tempDoc.size(); i ++) {*/
+                String tempName = "";
+                for (int j = 0; j < tempDoc.get(0).size(); j ++) {
+                    tempName = tempName + tempDoc.get(0).get(j) + " ";
+                }
+                doc.setName(tempName);
+                for (ArrayList<String> tempSentence : tempDoc) {
+                    for (String tempWord : tempSentence) {
+                        if (!doc.checkDuplicateKey(tempWord)) {
+                            WordInfo tempInfo = new WordInfo();
+                            doc.putWordInfo(tempWord, tempInfo);
+                        } else {
+                            doc.getWordInfo(tempWord).increaseFreq();
+                        }
+                    }
+                }
+            /*}*/
+            documentWords.add(doc);
+        }
+    }
+
+    public static void calcWordWeight (ArrayList<Document> documentWords) {
+        for (Document tempDoc : documentWords) {
+            tempDoc.calcWeight();
+        }
+    }
+
     public static void main (String[] args) throws IOException {
         String documentsFile = args[0];
         String stopwordsFile = args[1];
         Stemmer stemmer = new Stemmer();
         readStopWords(stopwordsFile);
-        readDocuments(documentsFile);
+        readDocuments(documentsFile, documents);
         calcWordsFequency(documents);
         wordTodiscard(checkWords);
         discard(discardWords);
         stemmerInput(documents);
         stemmer.wordOutput("stemmerIn.txt");
-        /*regExtract(documents);*/
+        readDocuments("stemmerOut.txt", stemmerDocuments);
+        calcStemedWordFreq(stemmerDocuments);
+        calcWordWeight(documentWords);
     }
 }
