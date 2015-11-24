@@ -7,20 +7,12 @@ import java.util.*;
 
 public class Clustering {
 
-    /*public class Document {
-        String docName;
-        HashMap<String, WordInfo> words;
-    }*/
     public static HashMap<String, WordInfo> checkWords = new HashMap<>();
     public static ArrayList<ArrayList<ArrayList<String>>> stemmerDocuments = new ArrayList<>();
     public static ArrayList<ArrayList<ArrayList<String>>> documents = new ArrayList<>();
     public static ArrayList<Document> documentWords = new ArrayList<>();
-    public static ArrayList<String> originalWords = new ArrayList<>();
-    public static ArrayList<WordInfo> originalWordInfo = new ArrayList<>();
     public static ArrayList<String> discardWords = new ArrayList<>();
     public static ArrayList<String> stopWords = new ArrayList<>();
-    public static ArrayList<Document> file = new ArrayList<>();
-    public static Clustering cluster = new Clustering();
 
 
     public static void readStopWords(String stopwordsFile) {
@@ -157,10 +149,29 @@ public class Clustering {
         writer.close();
     }
 
+    public static boolean prevDocContainWord (ArrayList<Document> precDocWords, String word) {
+        for (Document doc : precDocWords) {
+            if (doc.checkDuplicateKey(word)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static double updateWordFreq (ArrayList<Document> docWords, String word) {
+        double freq = 0.0;
+        for (Document doc : docWords) {
+            if (doc.checkDuplicateKey(word)){
+                doc.getWordInfo(word).increaseFreq();
+                freq = doc.getWordInfo(word).getFreq();
+            }
+        }
+        return freq;
+    }
+
     public static void calcStemedWordFreq (ArrayList<ArrayList<ArrayList<String>>> documents) {
         for (ArrayList<ArrayList<String>> tempDoc : documents) {
             Document doc = new Document();
-           /* for (int i = 0; i < tempDoc.size(); i ++) {*/
                 String tempName = "";
                 for (int j = 0; j < tempDoc.get(0).size(); j ++) {
                     tempName = tempName + tempDoc.get(0).get(j) + " ";
@@ -170,13 +181,15 @@ public class Clustering {
                     for (String tempWord : tempSentence) {
                         if (!doc.checkDuplicateKey(tempWord)) {
                             WordInfo tempInfo = new WordInfo();
-                            doc.putWordInfo(tempWord, tempInfo);
-                        } else {
-                            doc.getWordInfo(tempWord).increaseFreq();
+                            if (prevDocContainWord(documentWords, tempWord)){
+                                tempInfo.setFreq(updateWordFreq(documentWords, tempWord));
+                                doc.putWordInfo(tempWord, tempInfo);
+                            } else {
+                                doc.putWordInfo(tempWord, tempInfo);
+                            }
                         }
                     }
                 }
-            /*}*/
             documentWords.add(doc);
         }
     }
@@ -184,6 +197,19 @@ public class Clustering {
     public static void calcWordWeight (ArrayList<Document> documentWords) {
         for (Document tempDoc : documentWords) {
             tempDoc.calcWeight();
+        }
+    }
+
+    public static void findSameWord(ArrayList<Document> documentWords) {
+        for (int i = 0; i < documentWords.size() - 1; i++) {
+            for (int j = i + 1; j < documentWords.size(); j++) {
+                for (Map.Entry<String, WordInfo> tempDoc : documentWords.get(i).getWords().entrySet()) {
+                    if (documentWords.get(j).getWords().containsKey(tempDoc.getKey())) {
+                        System.out.println("Doc" + i + " "+ "Doc" + j + " " + "Same word: " + tempDoc.getKey());
+                    }
+                }
+
+            }
         }
     }
 
@@ -201,5 +227,7 @@ public class Clustering {
         readDocuments("stemmerOut.txt", stemmerDocuments);
         calcStemedWordFreq(stemmerDocuments);
         calcWordWeight(documentWords);
+        findSameWord(documentWords);
+        System.out.println("Hello");
     }
 }
