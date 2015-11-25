@@ -10,6 +10,7 @@ public class Clustering {
 
     public static HashMap<String, WordInfo> checkWords = new HashMap<>();
     public static ArrayList<ArrayList<ArrayList<String>>> stemmerDocuments = new ArrayList<>();
+    public static ArrayList<ArrayList<String>> docsCluster = new ArrayList<>();
     public static ArrayList<ArrayList<ArrayList<String>>> documents = new ArrayList<>();
     public static ArrayList<DuplicateWord> docWordList = new ArrayList<>();
     public static ArrayList<Document> documentWords = new ArrayList<>();
@@ -214,6 +215,9 @@ public class Clustering {
                 for (Map.Entry<String, WordInfo> tempWords : documentWords.get(i).getWords().entrySet()) {
                     if (documentWords.get(j).getWords().containsKey(tempWords.getKey())) {
                         String word = tempWords.getKey();
+                        if (word.equals("lady gaga")) {
+                            System.out.println();
+                        }
                         WordInfo wordInfo = tempWords.getValue();
                         /*tempWT.put(word, wordInfo.getWeight());*/
                         tempDW.setWordWeight(word, wordInfo.getWeight());
@@ -229,16 +233,44 @@ public class Clustering {
         }
     }
 
+    public static boolean MergeComponent (ArrayList<String> docs, ArrayList<ArrayList<String>> docsList) {
+        for (ArrayList<String> tempDocs : docsList) {
+            for (int i = 0; i < 2; i++) {
+                if (tempDocs.contains(docs.get(i))) {
+                    if (i == 0) {
+                        tempDocs.add(docs.get(1));
+                    }
+                    if (i == 1) {
+                        tempDocs.add(docs.get(0));
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static void connectedGraph(ArrayList<String> docs, ArrayList<ArrayList<String>> docsList) {
+        if (docsList.isEmpty()) {
+            docsList.add(docs);
+        } else {
+            if (!MergeComponent(docs, docsList)){
+                docsList.add(docs);
+            }
+        }
+    }
+
     public static void clusteringDocs (ArrayList<DuplicateWord> docWordList, String parameterN) {
         int i = 0;
         for (DuplicateWord docWord : docWordList) {
             if (docWord.getTotalWeight() > Double.parseDouble(parameterN)) {
                 System.out.println(docWord.getDocNames());
                 System.out.println(docWord.getDupWords());
+                connectedGraph(docWord.getDocNames(), docsCluster);
                 i++;
             }
         }
-        System.out.println(i);
+        System.out.println(docsCluster);
     }
 
     public static void main (String[] args) throws IOException {

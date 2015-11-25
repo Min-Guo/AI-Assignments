@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8388db7f-7616-44f6-b8e2-ed514b0ad80e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/DuplicateWord.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/textclustering/DuplicateWord.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment4/textclustering/Clustering.class" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/Clustering.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment4/textclustering/Document.class" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/Document.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment4/textclustering/WordInfo.class" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/WordInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textclustering/Clustering.java" afterPath="$PROJECT_DIR$/src/textclustering/Clustering.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textclustering/Document.java" afterPath="$PROJECT_DIR$/src/textclustering/Document.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textclustering/WordInfo.java" afterPath="$PROJECT_DIR$/src/textclustering/WordInfo.java" />
     </list>
     <ignored path="Assignment4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,21 +34,17 @@
       <file leaf-file-name="Clustering.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/textclustering/Clustering.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4115756">
-              <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.27062228">
+              <caret line="175" column="61" selection-start-line="175" selection-start-column="61" selection-end-line="175" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#readStopWords#0;class#Clustering#0" expanded="false" />
                 <element signature="method#regularizeAndExtract#0;class#Clustering#0" expanded="false" />
                 <element signature="method#readDocuments#0;class#Clustering#0" expanded="false" />
                 <element signature="method#calcWordsFequency#0;class#Clustering#0" expanded="false" />
-                <element signature="method#wordTodiscard#0;class#Clustering#0" expanded="false" />
                 <element signature="method#discard#0;class#Clustering#0" expanded="false" />
-                <element signature="method#stemmerInput#0;class#Clustering#0" expanded="false" />
                 <element signature="method#prevDocContainWord#0;class#Clustering#0" expanded="false" />
                 <element signature="method#updateWordFreq#0;class#Clustering#0" expanded="false" />
-                <element signature="method#calcStemedWordFreq#0;class#Clustering#0" expanded="false" />
-                <element signature="method#calcWordWeight#0;class#Clustering#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -64,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/src/textclustering/DuplicateWord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#303#304#0" expanded="true" />
@@ -75,7 +65,6 @@
                 <element signature="e#514#515#0" expanded="true" />
                 <element signature="e#576#577#0" expanded="true" />
                 <element signature="e#620#621#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
                 <element signature="e#698#699#0" expanded="true" />
                 <element signature="e#736#737#0" expanded="true" />
                 <element signature="e#770#771#0" expanded="true" />
@@ -116,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/src/textclustering/WordInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#312#313#0" expanded="true" />
@@ -217,8 +206,8 @@
         <option value="$PROJECT_DIR$/src/textclustering/Document.java" />
         <option value="$PROJECT_DIR$/src/textclustering/WordInfo.java" />
         <option value="$PROJECT_DIR$/src/textclustering/SameWordWeight.java" />
-        <option value="$PROJECT_DIR$/src/textclustering/Clustering.java" />
         <option value="$PROJECT_DIR$/src/textclustering/DuplicateWord.java" />
+        <option value="$PROJECT_DIR$/src/textclustering/Clustering.java" />
       </list>
     </option>
   </component>
@@ -338,7 +327,7 @@
       </extension>
       <option name="MAIN_CLASS_NAME" value="textclustering.Clustering" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="bioCluster.txt stopwords.txt  8" />
+      <option name="PROGRAM_PARAMETERS" value="bioCluster.txt stopwords.txt  5" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -635,7 +624,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5369407" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.251821" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -688,12 +677,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/textclustering/Clustering.java</url>
-          <line>260</line>
+          <line>292</line>
           <properties />
-          <option name="timeStamp" value="72" />
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="73" />
+      <option name="time" value="80" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -712,13 +701,9 @@
             <element signature="method#regularizeAndExtract#0;class#Clustering#0" expanded="false" />
             <element signature="method#readDocuments#0;class#Clustering#0" expanded="false" />
             <element signature="method#calcWordsFequency#0;class#Clustering#0" expanded="false" />
-            <element signature="method#wordTodiscard#0;class#Clustering#0" expanded="false" />
             <element signature="method#discard#0;class#Clustering#0" expanded="false" />
-            <element signature="method#stemmerInput#0;class#Clustering#0" expanded="false" />
             <element signature="method#prevDocContainWord#0;class#Clustering#0" expanded="false" />
             <element signature="method#updateWordFreq#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcStemedWordFreq#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcWordWeight#0;class#Clustering#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -765,13 +750,9 @@
             <element signature="method#regularizeAndExtract#0;class#Clustering#0" expanded="false" />
             <element signature="method#readDocuments#0;class#Clustering#0" expanded="false" />
             <element signature="method#calcWordsFequency#0;class#Clustering#0" expanded="false" />
-            <element signature="method#wordTodiscard#0;class#Clustering#0" expanded="false" />
             <element signature="method#discard#0;class#Clustering#0" expanded="false" />
-            <element signature="method#stemmerInput#0;class#Clustering#0" expanded="false" />
             <element signature="method#prevDocContainWord#0;class#Clustering#0" expanded="false" />
             <element signature="method#updateWordFreq#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcStemedWordFreq#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcWordWeight#0;class#Clustering#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,30 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/textclustering/WordInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/textclustering/Document.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -882,7 +839,7 @@
     <entry file="file://$PROJECT_DIR$/src/textclustering/DuplicateWord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#303#304#0" expanded="true" />
@@ -893,7 +850,6 @@
             <element signature="e#514#515#0" expanded="true" />
             <element signature="e#576#577#0" expanded="true" />
             <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
             <element signature="e#698#699#0" expanded="true" />
             <element signature="e#736#737#0" expanded="true" />
             <element signature="e#770#771#0" expanded="true" />
@@ -903,23 +859,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/textclustering/WordInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/textclustering/Clustering.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4115756">
-          <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.27062228">
+          <caret line="175" column="61" selection-start-line="175" selection-start-column="61" selection-end-line="175" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#readStopWords#0;class#Clustering#0" expanded="false" />
             <element signature="method#regularizeAndExtract#0;class#Clustering#0" expanded="false" />
             <element signature="method#readDocuments#0;class#Clustering#0" expanded="false" />
             <element signature="method#calcWordsFequency#0;class#Clustering#0" expanded="false" />
-            <element signature="method#wordTodiscard#0;class#Clustering#0" expanded="false" />
             <element signature="method#discard#0;class#Clustering#0" expanded="false" />
-            <element signature="method#stemmerInput#0;class#Clustering#0" expanded="false" />
             <element signature="method#prevDocContainWord#0;class#Clustering#0" expanded="false" />
             <element signature="method#updateWordFreq#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcStemedWordFreq#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcWordWeight#0;class#Clustering#0" expanded="false" />
           </folding>
         </state>
       </provider>
