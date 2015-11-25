@@ -4,12 +4,14 @@ import com.sun.javadoc.Doc;
 import javax.swing.text.html.HTMLDocument;
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.SynchronousQueue;
 
 public class Clustering {
 
     public static HashMap<String, WordInfo> checkWords = new HashMap<>();
     public static ArrayList<ArrayList<ArrayList<String>>> stemmerDocuments = new ArrayList<>();
     public static ArrayList<ArrayList<ArrayList<String>>> documents = new ArrayList<>();
+    public static ArrayList<DuplicateWord> docWordList = new ArrayList<>();
     public static ArrayList<Document> documentWords = new ArrayList<>();
     public static ArrayList<String> discardWords = new ArrayList<>();
     public static ArrayList<String> stopWords = new ArrayList<>();
@@ -203,19 +205,46 @@ public class Clustering {
     public static void findSameWord(ArrayList<Document> documentWords) {
         for (int i = 0; i < documentWords.size() - 1; i++) {
             for (int j = i + 1; j < documentWords.size(); j++) {
-                for (Map.Entry<String, WordInfo> tempDoc : documentWords.get(i).getWords().entrySet()) {
-                    if (documentWords.get(j).getWords().containsKey(tempDoc.getKey())) {
-                        System.out.println("Doc" + i + " "+ "Doc" + j + " " + "Same word: " + tempDoc.getKey());
+                DuplicateWord tempDW = new DuplicateWord();
+                /*HashMap<String, Double> tempWT = new HashMap<>();*/
+                double tempTW = 0.0;
+                tempDW.setDocNames(documentWords.get(i).getName());
+                tempDW.setDocNames(documentWords.get(j).getName());
+                /*String docname = documentWords.get(i).getName() + ", " + documentWords.get(j).getName();*/
+                for (Map.Entry<String, WordInfo> tempWords : documentWords.get(i).getWords().entrySet()) {
+                    if (documentWords.get(j).getWords().containsKey(tempWords.getKey())) {
+                        String word = tempWords.getKey();
+                        WordInfo wordInfo = tempWords.getValue();
+                        /*tempWT.put(word, wordInfo.getWeight());*/
+                        tempDW.setWordWeight(word, wordInfo.getWeight());
+                        tempTW += wordInfo.getWeight();
                     }
                 }
 
+
+                tempDW.setTotalWeight(tempTW);
+                /*tempDW.setWordWeight(tempWT);*/
+                docWordList.add(tempDW);
             }
         }
+    }
+
+    public static void clusteringDocs (ArrayList<DuplicateWord> docWordList, String parameterN) {
+        int i = 0;
+        for (DuplicateWord docWord : docWordList) {
+            if (docWord.getTotalWeight() > Double.parseDouble(parameterN)) {
+                System.out.println(docWord.getDocNames());
+                System.out.println(docWord.getDupWords());
+                i++;
+            }
+        }
+        System.out.println(i);
     }
 
     public static void main (String[] args) throws IOException {
         String documentsFile = args[0];
         String stopwordsFile = args[1];
+        String parameterN = args[2];
         Stemmer stemmer = new Stemmer();
         readStopWords(stopwordsFile);
         readDocuments(documentsFile, documents);
@@ -228,6 +257,7 @@ public class Clustering {
         calcStemedWordFreq(stemmerDocuments);
         calcWordWeight(documentWords);
         findSameWord(documentWords);
+        clusteringDocs(docWordList, parameterN);
         System.out.println("Hello");
     }
 }

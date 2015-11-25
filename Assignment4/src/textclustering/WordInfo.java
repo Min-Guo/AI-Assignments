@@ -35,4 +35,8 @@ public class WordInfo {
     public void setWeight (double wordWeight) {
         weight = wordWeight;
     }
+
+    public double getWeight () {
+        return weight;
+    }
 }

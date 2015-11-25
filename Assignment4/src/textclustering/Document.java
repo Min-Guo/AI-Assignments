@@ -16,6 +16,10 @@ public class Document {
         docName = name;
     }
 
+    public String getName () {
+        return docName;
+    }
+
     public HashMap<String, WordInfo> getWords () {
         return words;
     }
