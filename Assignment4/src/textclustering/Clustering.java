@@ -1,16 +1,12 @@
 package textclustering;
-import com.sun.javadoc.Doc;
-
-import javax.swing.text.html.HTMLDocument;
 import java.io.*;
 import java.util.*;
-import java.util.concurrent.SynchronousQueue;
 
 public class Clustering {
 
     public static HashMap<String, WordInfo> checkWords = new HashMap<>();
     public static ArrayList<ArrayList<ArrayList<String>>> stemmerDocuments = new ArrayList<>();
-    public static ArrayList<ArrayList<String>> docsCluster = new ArrayList<>();
+    public static ArrayList<ClusteringInfo> docsCluster = new ArrayList<>();
     public static ArrayList<ArrayList<ArrayList<String>>> documents = new ArrayList<>();
     public static ArrayList<DuplicateWord> docWordList = new ArrayList<>();
     public static ArrayList<Document> documentWords = new ArrayList<>();
@@ -173,22 +169,23 @@ public class Clustering {
     }
 
     public static void calcStemedWordFreq (ArrayList<ArrayList<ArrayList<String>>> documents) {
-        for (ArrayList<ArrayList<String>> tempDoc : documents) {
+        for (int i = 0; i < documents.size(); i++) {
             Document doc = new Document();
                 String tempName = "";
-                for (int j = 0; j < tempDoc.get(0).size(); j ++) {
-                    tempName = tempName + tempDoc.get(0).get(j) + " ";
+                for (int j = 0; j < documents.get(i).get(0).size(); j ++) {
+                    tempName = tempName + documents.get(i).get(0).get(j) + " ";
                 }
                 doc.setName(tempName);
-                for (ArrayList<String> tempSentence : tempDoc) {
-                    for (String tempWord : tempSentence) {
-                        if (!doc.checkDuplicateKey(tempWord)) {
+                for (int j = 0; j< documents.get(i).size(); j++) {
+                    for (int k = 0; k < documents.get(i).get(j).size(); k++) {
+                        if (!doc.checkDuplicateKey(documents.get(i).get(j).get(k))) {
                             WordInfo tempInfo = new WordInfo();
-                            if (prevDocContainWord(documentWords, tempWord)){
-                                tempInfo.setFreq(updateWordFreq(documentWords, tempWord));
-                                doc.putWordInfo(tempWord, tempInfo);
+                            tempInfo.setOriginalPosition(i, j, k);
+                            if (prevDocContainWord(documentWords, documents.get(i).get(j).get(k))){
+                                tempInfo.setFreq(updateWordFreq(documentWords, documents.get(i).get(j).get(k)));
+                                doc.putWordInfo(documents.get(i).get(j).get(k), tempInfo);
                             } else {
-                                doc.putWordInfo(tempWord, tempInfo);
+                                doc.putWordInfo(documents.get(i).get(j).get(k), tempInfo);
                             }
                         }
                     }
@@ -215,12 +212,9 @@ public class Clustering {
                 for (Map.Entry<String, WordInfo> tempWords : documentWords.get(i).getWords().entrySet()) {
                     if (documentWords.get(j).getWords().containsKey(tempWords.getKey())) {
                         String word = tempWords.getKey();
-                        if (word.equals("lady gaga")) {
-                            System.out.println();
-                        }
                         WordInfo wordInfo = tempWords.getValue();
                         /*tempWT.put(word, wordInfo.getWeight());*/
-                        tempDW.setWordWeight(word, wordInfo.getWeight());
+                        tempDW.setWordWeight(word, wordInfo);
                         tempTW += wordInfo.getWeight();
                     }
                 }
@@ -233,24 +227,40 @@ public class Clustering {
         }
     }
 
-    public static boolean MergeComponent (ArrayList<String> docs, ArrayList<ArrayList<String>> docsList) {
-        for (ArrayList<String> tempDocs : docsList) {
-            for (int i = 0; i < 2; i++) {
-                if (tempDocs.contains(docs.get(i))) {
-                    if (i == 0) {
-                        tempDocs.add(docs.get(1));
-                    }
-                    if (i == 1) {
-                        tempDocs.add(docs.get(0));
-                    }
-                    return true;
-                }
+    public static int checkDuplicate (String doc, ArrayList<ClusteringInfo> docsList) {
+        for (int i = 0; i < docsList.size(); i++) {
+            if(docsList.get(i).getDocs().contains(doc)) {
+                return i;
             }
         }
-        return false;
+        return -1;
     }
 
-    public static void connectedGraph(ArrayList<String> docs, ArrayList<ArrayList<String>> docsList) {
+    public static boolean MergeComponent (ClusteringInfo docs, ArrayList<ClusteringInfo> docsList) {
+        if ((checkDuplicate(docs.getDocs().get(0), docsList) == -1) && (checkDuplicate(docs.getDocs().get(1), docsList) == -1)) {
+            return false;
+        } else {
+            if ((checkDuplicate(docs.getDocs().get(0), docsList) != -1) && (checkDuplicate(docs.getDocs().get(1), docsList) != -1)) {
+                int i = checkDuplicate(docs.getDocs().get(0), docsList);
+                int j = checkDuplicate(docs.getDocs().get(1), docsList);
+                docsList.get(i).getDocs().addAll(docsList.get(j).getDocs());
+                docsList.get(i).getDupWords().addAll(docsList.get(j).getDupWords());
+                docsList.remove(j);
+
+            } else if ((checkDuplicate(docs.getDocs().get(0), docsList) != -1)) {
+                int i = checkDuplicate(docs.getDocs().get(0), docsList);
+                docsList.get(i).getDocs().add(docs.getDocs().get(1));
+                docsList.get(i).getDupWords().addAll(docs.getDupWords());
+            } else {
+                int i = checkDuplicate(docs.getDocs().get(1), docsList);
+                docsList.get(i).getDocs().add(docs.getDocs().get(0));
+                docsList.get(i).getDupWords().addAll(docs.getDupWords());
+            }
+        }
+        return true;
+    }
+
+    public static void connectedGraph(ClusteringInfo docs, ArrayList<ClusteringInfo> docsList) {
         if (docsList.isEmpty()) {
             docsList.add(docs);
         } else {
@@ -261,13 +271,14 @@ public class Clustering {
     }
 
     public static void clusteringDocs (ArrayList<DuplicateWord> docWordList, String parameterN) {
-        int i = 0;
         for (DuplicateWord docWord : docWordList) {
             if (docWord.getTotalWeight() > Double.parseDouble(parameterN)) {
                 System.out.println(docWord.getDocNames());
                 System.out.println(docWord.getDupWords());
-                connectedGraph(docWord.getDocNames(), docsCluster);
-                i++;
+                ClusteringInfo tempCI = new ClusteringInfo();
+                tempCI.setDocs(docWord.getDocNames());
+                tempCI.setDupWords(docWord.getDupWords());
+                connectedGraph(tempCI, docsCluster);
             }
         }
         System.out.println(docsCluster);

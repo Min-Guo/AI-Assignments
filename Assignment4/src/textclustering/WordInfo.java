@@ -1,10 +1,12 @@
 package textclustering;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class WordInfo {
     private double freq;
     private double weight;
+    private ArrayList<Integer> originalPosition = new ArrayList<>();
     private Set<Integer> docIndex;
 
     public WordInfo () {
@@ -14,6 +16,16 @@ public class WordInfo {
 
     public void addIndex (Integer index) {
         docIndex.add(index);
+    }
+
+    public void setOriginalPosition (int i, int j, int k) {
+        originalPosition.add(i);
+        originalPosition.add(j);
+        originalPosition.add(k);
+    }
+
+    public ArrayList<Integer> getOriginalPosition () {
+        return originalPosition;
     }
 
     public int sizeIndex () {
