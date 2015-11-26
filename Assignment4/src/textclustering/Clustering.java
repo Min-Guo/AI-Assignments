@@ -40,21 +40,14 @@ public class Clustering {
 
     }
 
-    public static ArrayList<String> regularizeAndExtract(ArrayList<String> tempSplit) {
-        for (Iterator<String> iterator = tempSplit.iterator(); iterator.hasNext(); ) {
-            String word = iterator.next();
-            if (word.length() < 3) {
-                iterator.remove();
-            }
-            if (stopWords.contains(word)) {
-                iterator.remove();
+    public static List<String> regularizeAndExtract(List<String> tempSplit) {
+        List<String> words = new ArrayList<>();
+        for (String word: tempSplit) {
+            if (word.length() >= 3 && !stopWords.contains(word.toLowerCase())) {
+                words.add(word);
             }
         }
-        for (int i = 0; i < tempSplit.size(); i++) {
-            tempSplit.set(i, tempSplit.get(i).toLowerCase());
-        }
-
-        return tempSplit;
+        return words;
     }
 
     public static List<List<List<String>>> readDocuments(String inputFile) {
@@ -63,10 +56,10 @@ public class Clustering {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile));
             String line;
             boolean preBlankLine = true;
-            ArrayList<ArrayList<String>> tempDoc = new ArrayList<>();
+            List<List<String>> tempDoc = new ArrayList<>();
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.trim().length() != 0) {
-                    ArrayList<String> tempSpilt = new ArrayList<>(Arrays.asList(line.split("[\\p{Punct}\\s]+")));
+                    List<String> tempSpilt = new ArrayList<>(Arrays.asList(line.split("[\\p{Punct}\\s]+")));
                     tempDoc.add(regularizeAndExtract(tempSpilt));
                     preBlankLine = false;
                 } else {
@@ -234,9 +227,11 @@ public class Clustering {
             if ((checkDuplicate(docs.getDocs().get(0), docsList) != -1) && (checkDuplicate(docs.getDocs().get(1), docsList) != -1)) {
                 int i = checkDuplicate(docs.getDocs().get(0), docsList);
                 int j = checkDuplicate(docs.getDocs().get(1), docsList);
-                docsList.get(i).getDocs().addAll(docsList.get(j).getDocs());
-                docsList.get(i).getDupWords().addAll(docsList.get(j).getDupWords());
-                docsList.remove(j);
+                if (i != j) {
+                    docsList.get(i).getDocs().addAll(docsList.get(j).getDocs());
+                    docsList.get(i).getDupWords().addAll(docsList.get(j).getDupWords());
+                    docsList.remove(j);
+                }
 
             } else if ((checkDuplicate(docs.getDocs().get(0), docsList) != -1)) {
                 int i = checkDuplicate(docs.getDocs().get(0), docsList);
