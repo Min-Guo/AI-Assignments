@@ -29,4 +29,22 @@ public class ClusteringInfo {
     public Set<WordInfo> getDupWords() {
         return dupWords;
     }
+
+    @Override
+    public String toString () {
+        List<WordInfo> words = new ArrayList<>(dupWords);
+        String resultName = words.get(0).toString();
+        for (int i = 1; i < words.size(); i++) {
+            resultName += ", ";
+            resultName += words.get(i).toString();
+        }
+
+        resultName += ": ";
+        resultName += docs.get(0);
+        for (int i = 1; i < docs.size(); i++) {
+            resultName += ", ";
+            resultName += docs.get(i);
+        }
+        return resultName;
+    }
 }

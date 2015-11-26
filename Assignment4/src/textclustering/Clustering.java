@@ -170,7 +170,7 @@ public class Clustering {
             for (int j = 0; j < originalWords.get(i).get(0).size(); j++) {
                 tempName = tempName + originalWords.get(i).get(0).get(j) + " ";
             }
-            doc.setName(tempName);
+            doc.setName(tempName.substring(0, tempName.length()-1));
             for (int j = 0; j < stremmerWords.get(i).size(); j++) {
                 for (int k = 0; k < stremmerWords.get(i).get(j).size(); k++) {
                     if (!doc.checkDuplicateKey(stremmerWords.get(i).get(j).get(k))) {
@@ -199,16 +199,13 @@ public class Clustering {
         for (int i = 0; i < documentWords.size() - 1; i++) {
             for (int j = i + 1; j < documentWords.size(); j++) {
                 DuplicateWord tempDW = new DuplicateWord();
-                /*HashMap<String, Double> tempWT = new HashMap<>();*/
                 double tempTW = 0.0;
                 tempDW.setDocNames(documentWords.get(i).getName());
                 tempDW.setDocNames(documentWords.get(j).getName());
-                /*String docname = documentWords.get(i).getName() + ", " + documentWords.get(j).getName();*/
                 for (Map.Entry<String, WordInfo> tempWords : documentWords.get(i).getWords().entrySet()) {
                     if (documentWords.get(j).getWords().containsKey(tempWords.getKey())) {
                         String word = tempWords.getKey();
                         WordInfo wordInfo = tempWords.getValue();
-                        /*tempWT.put(word, wordInfo.getWeight());*/
                         tempDW.setWordWeight(word, wordInfo);
                         tempTW += wordInfo.getWeight();
                     }
@@ -216,7 +213,6 @@ public class Clustering {
 
 
                 tempDW.setTotalWeight(tempTW);
-                /*tempDW.setWordWeight(tempWT);*/
                 docWordList.add(tempDW);
             }
         }
@@ -265,18 +261,21 @@ public class Clustering {
         }
     }
 
-    public static void clusteringDocs(ArrayList<DuplicateWord> docWordList, String parameterN) {
+    public static void clusteringDocs(ArrayList<DuplicateWord> docWordList, String parameterN) throws IOException{
         for (DuplicateWord docWord : docWordList) {
             if (docWord.getTotalWeight() > Double.parseDouble(parameterN)) {
-                System.out.println(docWord.getDocNames());
-                System.out.println(docWord.getDupWords());
                 ClusteringInfo tempCI = new ClusteringInfo();
                 tempCI.setDocs(docWord.getDocNames());
                 tempCI.setDupWords(docWord.getDupWords());
                 connectedGraph(tempCI, docsCluster);
             }
         }
-        System.out.println(docsCluster);
+        FileWriter writer = new FileWriter("Final_Output.txt");
+        for (ClusteringInfo cluster: docsCluster) {
+            writer.write(cluster.toString());
+            writer.write(System.getProperty( "line.separator" ));
+        }
+        writer.close();
     }
 
     public static void main(String[] args) throws IOException {
@@ -296,6 +295,5 @@ public class Clustering {
         calcWordWeight(words);
         findSameWord(words);
         clusteringDocs(docWordList, parameterN);
-        System.out.println("Hello");
     }
 }

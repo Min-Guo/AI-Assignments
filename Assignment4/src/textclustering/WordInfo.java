@@ -1,5 +1,7 @@
 package textclustering;
 
+
+
 import java.util.*;
 
 public class WordInfo {
@@ -47,7 +49,7 @@ public class WordInfo {
     public String stemmWord() {
         return stremmWord;
     }
-@Override
+    @Override
     public boolean equals(Object obj) {
     if (obj == null) {
         return false;
@@ -59,5 +61,10 @@ public class WordInfo {
         return false;
     }
     return true;
+    }
+
+    @Override
+    public String toString() {
+        return originalWord;
     }
 }
