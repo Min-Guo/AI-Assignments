@@ -3,29 +3,30 @@ package textclustering;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class ClusteringInfo {
-    private ArrayList<String> docs;
-    private Set<String> dupWords;
+    private List<String> docs;
+    private Set<WordInfo> dupWords;
 
     public ClusteringInfo () {
         docs = new ArrayList<>();
     }
 
-    public void setDocs (ArrayList<String> names) {
+    public void setDocs (List<String> names) {
        docs = new ArrayList<>(names);
     }
 
-    public void setDupWords (ArrayList<String> words) {
+    public void setDupWords (List<WordInfo> words) {
         dupWords = new HashSet<>(words);
     }
 
-    public ArrayList<String> getDocs() {
+    public List<String> getDocs() {
         return docs;
     }
 
-    public Set<String> getDupWords() {
+    public Set<WordInfo> getDupWords() {
         return dupWords;
     }
 }

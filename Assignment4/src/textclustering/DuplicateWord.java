@@ -1,6 +1,7 @@
 package textclustering;
 
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -22,7 +23,7 @@ public class DuplicateWord {
         totalWeight = weight;
     }
 
-    public void setWordWeight (String word,WordInfo wordinfo) {
+    public void setWordWeight (String word, WordInfo wordinfo) {
         wordWeight.put(word, wordinfo);
     }
 
@@ -34,7 +35,7 @@ public class DuplicateWord {
         return totalWeight;
     }
 
-    public ArrayList<String> getDupWords () {
-        return new ArrayList<>(wordWeight.keySet());
+    public ArrayList<WordInfo> getDupWords () {
+        return new ArrayList<>(wordWeight.values());
     }
 }

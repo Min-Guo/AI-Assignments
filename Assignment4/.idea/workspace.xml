@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8388db7f-7616-44f6-b8e2-ed514b0ad80e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment4/textclustering/Clustering.class" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/Clustering.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment4/textclustering/ClusteringInfo.class" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/ClusteringInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment4/textclustering/Document.class" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/Document.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment4/textclustering/DuplicateWord.class" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/DuplicateWord.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment4/textclustering/WordInfo.class" afterPath="$PROJECT_DIR$/out/production/Assignment4/textclustering/WordInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textclustering/Clustering.java" afterPath="$PROJECT_DIR$/src/textclustering/Clustering.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textclustering/ClusteringInfo.java" afterPath="$PROJECT_DIR$/src/textclustering/ClusteringInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textclustering/Document.java" afterPath="$PROJECT_DIR$/src/textclustering/Document.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textclustering/DuplicateWord.java" afterPath="$PROJECT_DIR$/src/textclustering/DuplicateWord.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textclustering/WordInfo.java" afterPath="$PROJECT_DIR$/src/textclustering/WordInfo.java" />
     </list>
@@ -38,17 +42,10 @@
       <file leaf-file-name="Clustering.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/textclustering/Clustering.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63139933">
-              <caret line="303" column="0" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5389541">
+              <caret line="278" column="38" selection-start-line="278" selection-start-column="38" selection-end-line="278" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#readStopWords#0;class#Clustering#0" expanded="false" />
-                <element signature="method#regularizeAndExtract#0;class#Clustering#0" expanded="false" />
-                <element signature="method#readDocuments#0;class#Clustering#0" expanded="false" />
-                <element signature="method#calcWordsFequency#0;class#Clustering#0" expanded="false" />
-                <element signature="method#discard#0;class#Clustering#0" expanded="false" />
-                <element signature="method#prevDocContainWord#0;class#Clustering#0" expanded="false" />
-                <element signature="method#updateWordFreq#0;class#Clustering#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -58,19 +55,13 @@
         <entry file="file://$PROJECT_DIR$/src/textclustering/ClusteringInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="28" />
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#233#234#0" expanded="true" />
-                <element signature="e#273#274#0" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
-                <element signature="e#370#371#0" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
-                <element signature="e#474#475#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#543#544#0" expanded="true" />
-                <element signature="e#583#584#0" expanded="true" />
-                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#341#342#0" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
+                <element signature="e#439#440#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,34 +71,18 @@
         <entry file="file://$PROJECT_DIR$/src/textclustering/DuplicateWord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="27" />
+              <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#282#283#0" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
-                <element signature="e#372#373#0" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-                <element signature="e#457#458#0" expanded="true" />
-                <element signature="e#493#494#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-                <element signature="e#651#652#0" expanded="true" />
-                <element signature="e#682#683#0" expanded="true" />
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#754#755#0" expanded="true" />
-                <element signature="e#801#802#0" expanded="true" />
-                <element signature="e#860#861#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#408#409#0" expanded="true" />
+                <element signature="e#560#561#0" expanded="true" />
+                <element signature="e#606#607#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#756#757#0" expanded="true" />
+                <element signature="e#805#806#0" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="950" column="25" selection-start-line="950" selection-start-column="25" selection-end-line="950" selection-end-column="25" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -116,23 +91,11 @@
         <entry file="file://$PROJECT_DIR$/src/textclustering/Document.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#191#192#0" expanded="true" />
-                <element signature="e#231#232#0" expanded="true" />
-                <element signature="e#272#273#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#416#417#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
-                <element signature="e#606#607#0" expanded="true" />
-                <element signature="e#647#648#0" expanded="true" />
-                <element signature="e#700#701#0" expanded="true" />
-                <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
+                <element signature="e#395#396#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,26 +105,8 @@
         <entry file="file://$PROJECT_DIR$/src/textclustering/WordInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#409#410#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#666#667#0" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#736#737#0" expanded="true" />
-                <element signature="e#774#775#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#850#851#0" expanded="true" />
-                <element signature="e#882#883#0" expanded="true" />
-                <element signature="e#909#910#0" expanded="true" />
-                <element signature="e#943#944#0" expanded="true" />
-                <element signature="e#965#966#0" expanded="true" />
-                <element signature="e#1014#1015#0" expanded="true" />
-                <element signature="e#1049#1050#0" expanded="true" />
-                <element signature="e#1083#1084#0" expanded="true" />
-                <element signature="e#1112#1113#0" expanded="true" />
-              </folding>
+              <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,18 +115,57 @@
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="456" column="19" selection-start-line="456" selection-start-column="19" selection-end-line="456" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="66" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
-              <folding />
+              <caret line="427" column="13" selection-start-line="427" selection-start-column="13" selection-end-line="427" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#54151#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#6252#6253#0" expanded="false" />
+                <element signature="e#6320#6321#0" expanded="false" />
+                <element signature="e#10189#10190#0" expanded="false" />
+                <element signature="e#10216#10217#0" expanded="false" />
+                <element signature="e#10398#10399#0" expanded="false" />
+                <element signature="e#10430#10431#0" expanded="false" />
+                <element signature="e#10907#10908#0" expanded="false" />
+                <element signature="e#10945#10946#0" expanded="false" />
+                <element signature="e#13541#13542#0" expanded="false" />
+                <element signature="e#13596#13597#0" expanded="false" />
+                <element signature="e#15414#15415#0" expanded="false" />
+                <element signature="e#15459#15460#0" expanded="false" />
+                <element signature="e#24549#24550#0" expanded="false" />
+                <element signature="e#24603#24604#0" expanded="false" />
+                <element signature="e#30347#30348#0" expanded="false" />
+                <element signature="e#30384#30385#0" expanded="false" />
+                <element signature="e#30684#30685#0" expanded="false" />
+                <element signature="e#30716#30717#0" expanded="false" />
+                <element signature="e#31041#31042#0" expanded="false" />
+                <element signature="e#31086#31087#0" expanded="false" />
+                <element signature="e#33262#33263#0" expanded="false" />
+                <element signature="e#33304#33305#0" expanded="false" />
+                <element signature="e#33338#33339#0" expanded="false" />
+                <element signature="e#33375#33376#0" expanded="false" />
+                <element signature="e#33413#33414#0" expanded="false" />
+                <element signature="e#33454#33455#0" expanded="false" />
+                <element signature="e#38943#38944#0" expanded="false" />
+                <element signature="e#38994#38995#0" expanded="false" />
+                <element signature="e#39436#39437#0" expanded="false" />
+                <element signature="e#39481#39482#0" expanded="false" />
+                <element signature="e#39886#39887#0" expanded="false" />
+                <element signature="e#39960#39961#0" expanded="false" />
+                <element signature="e#40600#40601#0" expanded="false" />
+                <element signature="e#40658#40659#0" expanded="false" />
+                <element signature="e#42227#42228#0" expanded="false" />
+                <element signature="e#42280#42281#0" expanded="false" />
+                <element signature="e#42326#42327#0" expanded="false" />
+                <element signature="e#42383#42384#0" expanded="false" />
+                <element signature="e#44775#44776#0" expanded="false" />
+                <element signature="e#44842#44843#0" expanded="false" />
+                <element signature="e#46390#46391#0" expanded="false" />
+                <element signature="e#46455#46456#0" expanded="false" />
+                <element signature="e#51499#51500#0" expanded="false" />
+                <element signature="e#51557#51558#0" expanded="false" />
+                <element signature="e#51597#51598#0" expanded="false" />
+                <element signature="e#51690#51691#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -201,7 +185,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="386" column="0" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#0#13290#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,12 +218,12 @@
         <option value="$PROJECT_DIR$/src/textclustering/PS.java" />
         <option value="$PROJECT_DIR$/input.txt" />
         <option value="$PROJECT_DIR$/src/textclustering/Stemmer.java" />
-        <option value="$PROJECT_DIR$/src/textclustering/Document.java" />
         <option value="$PROJECT_DIR$/src/textclustering/SameWordWeight.java" />
+        <option value="$PROJECT_DIR$/src/textclustering/Document.java" />
         <option value="$PROJECT_DIR$/src/textclustering/WordInfo.java" />
-        <option value="$PROJECT_DIR$/src/textclustering/Clustering.java" />
         <option value="$PROJECT_DIR$/src/textclustering/ClusteringInfo.java" />
         <option value="$PROJECT_DIR$/src/textclustering/DuplicateWord.java" />
+        <option value="$PROJECT_DIR$/src/textclustering/Clustering.java" />
       </list>
     </option>
   </component>
@@ -245,7 +231,7 @@
     <option name="x" value="-1920" />
     <option name="y" value="-202" />
     <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -636,8 +622,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="-202" width="1920" height="1053" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1920" y="-202" width="1920" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -653,8 +639,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3610822" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36062175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -707,7 +693,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/textclustering/Clustering.java</url>
-          <line>303</line>
+          <line>298</line>
           <properties />
           <option name="timeStamp" value="80" />
         </line-breakpoint>
@@ -727,13 +713,151 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readStopWords#0;class#Clustering#0" expanded="false" />
-            <element signature="method#regularizeAndExtract#0;class#Clustering#0" expanded="false" />
-            <element signature="method#readDocuments#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcWordsFequency#0;class#Clustering#0" expanded="false" />
-            <element signature="method#discard#0;class#Clustering#0" expanded="false" />
-            <element signature="method#prevDocContainWord#0;class#Clustering#0" expanded="false" />
-            <element signature="method#updateWordFreq#0;class#Clustering#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textclustering/ClusteringInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textclustering/DuplicateWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="950" column="25" selection-start-line="950" selection-start-column="25" selection-end-line="950" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textclustering/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textclustering/WordInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="427" column="13" selection-start-line="427" selection-start-column="13" selection-end-line="427" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#54151#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6252#6253#0" expanded="false" />
+            <element signature="e#6320#6321#0" expanded="false" />
+            <element signature="e#10189#10190#0" expanded="false" />
+            <element signature="e#10216#10217#0" expanded="false" />
+            <element signature="e#10398#10399#0" expanded="false" />
+            <element signature="e#10430#10431#0" expanded="false" />
+            <element signature="e#10907#10908#0" expanded="false" />
+            <element signature="e#10945#10946#0" expanded="false" />
+            <element signature="e#13541#13542#0" expanded="false" />
+            <element signature="e#13596#13597#0" expanded="false" />
+            <element signature="e#15414#15415#0" expanded="false" />
+            <element signature="e#15459#15460#0" expanded="false" />
+            <element signature="e#24549#24550#0" expanded="false" />
+            <element signature="e#24603#24604#0" expanded="false" />
+            <element signature="e#30347#30348#0" expanded="false" />
+            <element signature="e#30384#30385#0" expanded="false" />
+            <element signature="e#30684#30685#0" expanded="false" />
+            <element signature="e#30716#30717#0" expanded="false" />
+            <element signature="e#31041#31042#0" expanded="false" />
+            <element signature="e#31086#31087#0" expanded="false" />
+            <element signature="e#33262#33263#0" expanded="false" />
+            <element signature="e#33304#33305#0" expanded="false" />
+            <element signature="e#33338#33339#0" expanded="false" />
+            <element signature="e#33375#33376#0" expanded="false" />
+            <element signature="e#33413#33414#0" expanded="false" />
+            <element signature="e#33454#33455#0" expanded="false" />
+            <element signature="e#38943#38944#0" expanded="false" />
+            <element signature="e#38994#38995#0" expanded="false" />
+            <element signature="e#39436#39437#0" expanded="false" />
+            <element signature="e#39481#39482#0" expanded="false" />
+            <element signature="e#39886#39887#0" expanded="false" />
+            <element signature="e#39960#39961#0" expanded="false" />
+            <element signature="e#40600#40601#0" expanded="false" />
+            <element signature="e#40658#40659#0" expanded="false" />
+            <element signature="e#42227#42228#0" expanded="false" />
+            <element signature="e#42280#42281#0" expanded="false" />
+            <element signature="e#42326#42327#0" expanded="false" />
+            <element signature="e#42383#42384#0" expanded="false" />
+            <element signature="e#44775#44776#0" expanded="false" />
+            <element signature="e#44842#44843#0" expanded="false" />
+            <element signature="e#46390#46391#0" expanded="false" />
+            <element signature="e#46455#46456#0" expanded="false" />
+            <element signature="e#51499#51500#0" expanded="false" />
+            <element signature="e#51557#51558#0" expanded="false" />
+            <element signature="e#51597#51598#0" expanded="false" />
+            <element signature="e#51690#51691#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bioCluster.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textclustering/Stemmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="386" column="0" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13290#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textclustering/Clustering.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -742,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="66" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,7 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +888,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="418" column="25" selection-start-line="418" selection-start-column="25" selection-end-line="418" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#0#13290#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -776,13 +900,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readStopWords#0;class#Clustering#0" expanded="false" />
-            <element signature="method#regularizeAndExtract#0;class#Clustering#0" expanded="false" />
-            <element signature="method#readDocuments#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcWordsFequency#0;class#Clustering#0" expanded="false" />
-            <element signature="method#discard#0;class#Clustering#0" expanded="false" />
-            <element signature="method#prevDocContainWord#0;class#Clustering#0" expanded="false" />
-            <element signature="method#updateWordFreq#0;class#Clustering#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="66" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,19 +933,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="456" column="19" selection-start-line="456" selection-start-column="19" selection-end-line="456" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/textclustering/Stemmer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="386" column="0" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#13290#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -838,125 +947,140 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="427" column="13" selection-start-line="427" selection-start-column="13" selection-end-line="427" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#54151#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6252#6253#0" expanded="false" />
+            <element signature="e#6320#6321#0" expanded="false" />
+            <element signature="e#10189#10190#0" expanded="false" />
+            <element signature="e#10216#10217#0" expanded="false" />
+            <element signature="e#10398#10399#0" expanded="false" />
+            <element signature="e#10430#10431#0" expanded="false" />
+            <element signature="e#10907#10908#0" expanded="false" />
+            <element signature="e#10945#10946#0" expanded="false" />
+            <element signature="e#13541#13542#0" expanded="false" />
+            <element signature="e#13596#13597#0" expanded="false" />
+            <element signature="e#15414#15415#0" expanded="false" />
+            <element signature="e#15459#15460#0" expanded="false" />
+            <element signature="e#24549#24550#0" expanded="false" />
+            <element signature="e#24603#24604#0" expanded="false" />
+            <element signature="e#30347#30348#0" expanded="false" />
+            <element signature="e#30384#30385#0" expanded="false" />
+            <element signature="e#30684#30685#0" expanded="false" />
+            <element signature="e#30716#30717#0" expanded="false" />
+            <element signature="e#31041#31042#0" expanded="false" />
+            <element signature="e#31086#31087#0" expanded="false" />
+            <element signature="e#33262#33263#0" expanded="false" />
+            <element signature="e#33304#33305#0" expanded="false" />
+            <element signature="e#33338#33339#0" expanded="false" />
+            <element signature="e#33375#33376#0" expanded="false" />
+            <element signature="e#33413#33414#0" expanded="false" />
+            <element signature="e#33454#33455#0" expanded="false" />
+            <element signature="e#38943#38944#0" expanded="false" />
+            <element signature="e#38994#38995#0" expanded="false" />
+            <element signature="e#39436#39437#0" expanded="false" />
+            <element signature="e#39481#39482#0" expanded="false" />
+            <element signature="e#39886#39887#0" expanded="false" />
+            <element signature="e#39960#39961#0" expanded="false" />
+            <element signature="e#40600#40601#0" expanded="false" />
+            <element signature="e#40658#40659#0" expanded="false" />
+            <element signature="e#42227#42228#0" expanded="false" />
+            <element signature="e#42280#42281#0" expanded="false" />
+            <element signature="e#42326#42327#0" expanded="false" />
+            <element signature="e#42383#42384#0" expanded="false" />
+            <element signature="e#44775#44776#0" expanded="false" />
+            <element signature="e#44842#44843#0" expanded="false" />
+            <element signature="e#46390#46391#0" expanded="false" />
+            <element signature="e#46455#46456#0" expanded="false" />
+            <element signature="e#51499#51500#0" expanded="false" />
+            <element signature="e#51557#51558#0" expanded="false" />
+            <element signature="e#51597#51598#0" expanded="false" />
+            <element signature="e#51690#51691#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="543" column="6" selection-start-line="543" selection-start-column="6" selection-end-line="543" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/textclustering/WordInfo.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.02561366">
+          <caret line="950" column="25" selection-start-line="950" selection-start-column="25" selection-end-line="950" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/textclustering/Document.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="950" column="25" selection-start-line="950" selection-start-column="25" selection-end-line="950" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/textclustering/DuplicateWord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="27" />
+          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#457#458#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textclustering/WordInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/textclustering/ClusteringInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="28" />
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/textclustering/Clustering.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63139933">
-          <caret line="303" column="0" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5389541">
+          <caret line="278" column="38" selection-start-line="278" selection-start-column="38" selection-end-line="278" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readStopWords#0;class#Clustering#0" expanded="false" />
-            <element signature="method#regularizeAndExtract#0;class#Clustering#0" expanded="false" />
-            <element signature="method#readDocuments#0;class#Clustering#0" expanded="false" />
-            <element signature="method#calcWordsFequency#0;class#Clustering#0" expanded="false" />
-            <element signature="method#discard#0;class#Clustering#0" expanded="false" />
-            <element signature="method#prevDocContainWord#0;class#Clustering#0" expanded="false" />
-            <element signature="method#updateWordFreq#0;class#Clustering#0" expanded="false" />
           </folding>
         </state>
       </provider>

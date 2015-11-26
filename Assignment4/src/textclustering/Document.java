@@ -6,6 +6,7 @@ import java.lang.Math;
 
 public class Document {
     private String docName;
+    private WordInfo nameInfo;
     private HashMap<String, WordInfo> words;
 
     public Document () {

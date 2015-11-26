@@ -1,42 +1,34 @@
 package textclustering;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+
+import java.util.*;
 
 public class WordInfo {
     private double freq;
     private double weight;
-    private ArrayList<Integer> originalPosition = new ArrayList<>();
     private Set<Integer> docIndex;
+    private String stremmWord;
+    private String originalWord;
 
-    public WordInfo () {
+    public WordInfo(String stremmWord, String originalWord) {
         docIndex = new HashSet<>();
         freq = 1;
+        this.stremmWord = stremmWord;
+        this.originalWord = originalWord;
     }
 
-    public void addIndex (Integer index) {
+    public void addIndex(Integer index) {
         docIndex.add(index);
     }
 
-    public void setOriginalPosition (int i, int j, int k) {
-        originalPosition.add(i);
-        originalPosition.add(j);
-        originalPosition.add(k);
-    }
-
-    public ArrayList<Integer> getOriginalPosition () {
-        return originalPosition;
-    }
-
-    public int sizeIndex () {
+    public int sizeIndex() {
         return docIndex.size();
     }
 
-    public void setFreq (double freuency) {
+    public void setFreq(double freuency) {
         freq = freuency;
     }
 
-    public double getFreq () {
+    public double getFreq() {
         return freq;
     }
 
@@ -44,11 +36,28 @@ public class WordInfo {
         freq++;
     }
 
-    public void setWeight (double wordWeight) {
+    public void setWeight(double wordWeight) {
         weight = wordWeight;
     }
 
-    public double getWeight () {
+    public double getWeight() {
         return weight;
+    }
+
+    public String stemmWord() {
+        return stremmWord;
+    }
+@Override
+    public boolean equals(Object obj) {
+    if (obj == null) {
+        return false;
+    }
+    if (this.getClass() != obj.getClass()) {
+        return false;
+    }
+    if (!this.stremmWord.equals(((WordInfo) obj).stemmWord())) {
+        return false;
+    }
+    return true;
     }
 }
